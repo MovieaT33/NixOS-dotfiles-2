@@ -8,15 +8,18 @@
 		};
 	};
 
-	outputs = { self, nixpkgs }: {
+	outputs = { self, nixpkgs, home-manager, ... }: let
+	  system = "x86_64-linux";
+	  stateVersion = "26.11";
+	in {
 		nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-			system = "x86_64-linux";
+			inherit system;
 
 			modules = [
 				./modules/boot.nix
 				./modules/config.nix
 				./modules/hardware.nix
-				./modules/nix.nix
+				./modules/system.nix
 			];
 		};
 	};

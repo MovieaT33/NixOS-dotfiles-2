@@ -1,7 +1,20 @@
 # aliases
+alias v := repo-version
+alias V := nixos-version
 alias s := sync
+alias u := update
+alias d := deploy
+alias g := upgrade
 
 default: upgrade
+
+# shows the latest repository commit
+repo-version:
+	sudo git log -1 --oneline
+
+# shows nixos version
+nixos-version:
+	nixos-version
 
 # sync local repository with remote
 sync:

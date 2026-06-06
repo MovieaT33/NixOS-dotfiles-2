@@ -22,5 +22,10 @@
 		neovim
 	];
 
-	system.stateVersion = "26.05";
+	programs.niri.enable = true;
+
+	services.displayManager.gdm = {
+		enable = true;
+		wayland = true;
+	};
 }
