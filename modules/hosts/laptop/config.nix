@@ -2,6 +2,7 @@
 	flake.nixosModules.laptopConfig = { config, pkgs, ... }: {
 		imports = [
 			self.nixosModules.laptopHardware
+			# self.nixosModules.niri
 		];
 
 		boot = {
@@ -44,5 +45,13 @@
 			just
 			neovim
 		];
+
+		services = {
+			xserver.enable = true;
+			displayManager = {
+				sddm.enable = true;
+				plasma6.enable = true;
+			};
+		};
 	};
 }

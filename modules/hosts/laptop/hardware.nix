@@ -20,5 +20,7 @@
 		swapDevices = [
 			{ device = "/dev/mapper/vg0_root-swap"; }
 		];
+
+		nixpkgs.hostPlatform = "x86_64-linux";
 	};
 }
