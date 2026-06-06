@@ -20,5 +20,5 @@
 		swapDevices = [
 			{ device = "/dev/mapper/vg0_root-swap"; }
 		];
-	}
+	};
 }

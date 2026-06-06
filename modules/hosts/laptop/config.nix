@@ -29,11 +29,11 @@
 
 		i18n.defaultLocale = "en_US.UTF-8";
 
-  	users.users = {
-    	"mvt33" = {
-      	isNormalUser = true;
-    	};
-  	};
+		users.users = {
+			"mvt33" = {
+				isNormalUser = true;
+			};
+		};
 
 		networking = {
 			hostName = "nixos";
@@ -45,7 +45,5 @@
 			just
 			neovim
 		];
-
-		programs.niri.enable = true;
 	};
 }
