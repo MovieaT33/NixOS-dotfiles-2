@@ -39,10 +39,10 @@
 			sudo.enable = false;
 			doas = {
 				enable = true;
-				extraRules = [
+				extraRules = [ {
 					users = [ "mvt33" ];
 					keepEnv = true;
-				];
+				} ];
 			};
 		};
 
