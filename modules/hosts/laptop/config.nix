@@ -48,10 +48,11 @@
 
 		services = {
 			xserver.enable = true;
-			displayManager = {
-				sddm.enable = true;
-				plasma6.enable = true;
+			displayManager.sddm = {
+				enable = true;
+				wayland = true;
 			};
+			desktopManager.plasma6.enable = true;
 		};
 	};
 }
