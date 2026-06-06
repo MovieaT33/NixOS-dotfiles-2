@@ -2,7 +2,7 @@
 	flake.nixosModules.laptopConfig = { config, pkgs, ... }: {
 		imports = [
 			self.nixosModules.laptopHardware
-			# self.nixosModules.niri
+			self.nixosModules.niri
 		];
 
 		boot = {
@@ -35,6 +35,17 @@
 			};
 		};
 
+		security = {
+			sudo.enable = false;
+			doas = {
+				enable = true;
+				extraRules = [
+					users = [ "mvt33" ];
+					keepEnv = true;
+				];
+			};
+		};
+
 		networking = {
 			hostName = "nixos";
 			networkmanager.enable = true;
@@ -50,7 +61,7 @@
 			xserver.enable = true;
 			displayManager.sddm = {
 				enable = true;
-				wayland = true;
+				wayland.enable = true;
 			};
 			desktopManager.plasma6.enable = true;
 		};
