@@ -27,6 +27,6 @@ update:
 
 # deploy configuration with current profile
 deploy:
-	sudo nixos-rebuild switch --flake .
+	sudo nixos-rebuild switch --flake .#laptop
 
 upgrade: sync update deploy
