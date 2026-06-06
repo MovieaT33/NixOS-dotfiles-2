@@ -1,4 +1,4 @@
-{ pkgs }:
+{ config, pkgs, ... }:
 
 {
 	imports = [ ./hardware.nix ];
@@ -11,7 +11,7 @@
 
 		kernelPackages = pkgs.linuxPackages_latest;
 
-		initrd.luks.devices."luks_root".device = "/dev/mapper/vg0_root-root";
+		initrd.luks.devices."luks_root".device = "/dev/vda2";
 	};
 
 	networking = {
@@ -23,8 +23,10 @@
 
 	i18n.defaultLocale = "en_US.UTF-8";
 
-	environment.systemPackages = [
+	environment.systemPackages = with pkgs; [
+		git
 		just
+		neovim
 	];
 
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
